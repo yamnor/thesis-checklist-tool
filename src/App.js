@@ -241,8 +241,8 @@ const ThesisChecklistTool = () => {
 
   return (
     <div className="thesis-checklist-tool noto-sans-jp">
-      <h1>卒論・修論チェックリスト 📝</h1>
-      
+      <h1>卒論・修論チェッカー 📝</h1>
+
       {Object.entries(checklistData).map(([section, subsections], index) => (
         <Accordion key={index} title={section}>
           {Object.entries(subsections).map(([subsection, items], subIndex) => (
