@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/thesis-checklist-tool/static/css/main.633f19dd.chunk.css",
+    "main.js": "/thesis-checklist-tool/static/js/main.9f9d0eb4.chunk.js",
+    "main.js.map": "/thesis-checklist-tool/static/js/main.9f9d0eb4.chunk.js.map",
+    "runtime~main.js": "/thesis-checklist-tool/static/js/runtime~main.3baa8eda.js",
+    "runtime~main.js.map": "/thesis-checklist-tool/static/js/runtime~main.3baa8eda.js.map",
+    "static/js/2.07b41d29.chunk.js": "/thesis-checklist-tool/static/js/2.07b41d29.chunk.js",
+    "static/js/2.07b41d29.chunk.js.map": "/thesis-checklist-tool/static/js/2.07b41d29.chunk.js.map",
+    "index.html": "/thesis-checklist-tool/index.html",
+    "precache-manifest.e6bd459427e2ae143ab774b13b57c40c.js": "/thesis-checklist-tool/precache-manifest.e6bd459427e2ae143ab774b13b57c40c.js",
+    "service-worker.js": "/thesis-checklist-tool/service-worker.js",
+    "static/css/main.633f19dd.chunk.css.map": "/thesis-checklist-tool/static/css/main.633f19dd.chunk.css.map"
+  }
+}
