@@ -3,7 +3,7 @@ body {
 }
 
 .thesis-checklist-tool {
-  max-width: 48rem;
+  max-width: 1150px;
   margin: 0 auto;
   padding: 1.5rem;
   background-color: #f9fafb;
@@ -16,42 +16,6 @@ h1 {
   margin-bottom: 2rem;
   text-align: center;
   color: #1f2937;
-}
-
-.progress-section {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  padding: 1.5rem;
-  background-color: #f3f4f6;
-  border-radius: 0.5rem;
-}
-
-.progress-section h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #374151;
-}
-
-.progress-bar-container {
-  width: 100%;
-  background-color: #e5e7eb;
-  height: 0.75rem;
-  border-radius: 9999px;
-  overflow: hidden;
-}
-
-.progress-bar {
-  background-color: #3b82f6;
-  height: 100%;
-  transition: width 300ms ease-in-out;
-}
-
-.progress-text {
-  text-align: center;
-  margin-top: 0.75rem;
-  font-size: 1.1rem;
-  color: #4b5563;
 }
 
 .accordion {
@@ -71,7 +35,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-weight: 500;
+  font-weight: 700;
   transition: background-color 200ms;
   font-size: 1.1rem;
 }
@@ -109,13 +73,42 @@ h1 {
   align-items: center;
   margin-bottom: 0.75rem;
   cursor: pointer;
-  font-size: 1.1rem;  /* リストの文字サイズを大きく */
+  font-size: 1.1rem;
 }
 
 .checklist-item input[type="checkbox"] {
   margin-right: 0.75rem;
   width: 1.2rem;
   height: 1.2rem;
+}
+
+.progress-section {
+  margin-top: 0rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #f3f4f6;
+  border-radius: 0.5rem;
+}
+
+.progress-section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #374151;
+}
+
+.progress-bar-container {
+  width: 100%;
+  background-color: #e5e7eb;
+  height: 1rem;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  background-color: #3b82f6;
+  height: 100%;
+  transition: width 300ms ease-in-out;
 }
 
 .certificate {
@@ -131,7 +124,6 @@ h1 {
   align-items: center;
   justify-content: space-between;
 }
-
 
 .progress-character {
   flex: 0 0 auto;
@@ -174,5 +166,121 @@ h1 {
   .progress-character {
     margin-right: 0;
     margin-bottom: 1rem;
+  }
+}
+
+.two-column-layout {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.checklist-column {
+  flex: 3;
+}
+
+.progress-column {
+  flex: 2;
+}
+
+.progress-box {
+  position: sticky;
+  top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .two-column-layout {
+    flex-direction: column;
+  }
+  
+  .progress-box {
+    position: static;
+  }
+}
+
+.print-button {
+  display: block;
+  margin: 2rem auto;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #3b82f6;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.print-button:hover {
+  background-color: #2563eb;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print-view, .print-view * {
+    visibility: visible;
+  }
+  .print-view {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    font-size: 9.5pt;
+    line-height: 1.1;
+  }
+  .print-view h1 {
+    font-size: 11pt;
+    margin-bottom: 5pt;
+  }
+  .print-progress {
+    margin-bottom: 10pt;
+  }
+  .print-progress h2 {
+    font-size: 11pt;
+    margin-bottom: 5pt;
+  }
+  .print-section {
+    margin-bottom: 9.5pt;
+    break-inside: avoid;
+  }
+  .print-section h3 {
+    font-size: 10pt;
+    margin-bottom: 5pt;
+    border-bottom: 1pt solid #000;
+  }
+  .print-subsection {
+    margin-bottom: 5pt;
+  }
+  .print-subsection h4 {
+    font-size: 9.5pt;
+    margin-bottom: 2pt;
+  }
+  .print-checklist ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  .print-checklist li {
+    margin-bottom: 2pt;
+    display: flex;
+    align-items: flex-start;
+  }
+  .print-checklist input[type="checkbox"] {
+    margin-right: 5pt;
+    flex-shrink: 0;
+  }
+  .print-checklist li span {
+    flex-grow: 1;
+  }
+  @page {
+    margin: 1cm;
+  }
+  h1, h2, h3, h4 {
+    page-break-after: avoid;
+  }
+  li {
+    page-break-inside: avoid;
   }
 }

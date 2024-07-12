@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import PrintView from './PrintView';
 
 const checklistData = {
   "1. 内容について 📝": {
@@ -147,7 +148,7 @@ const ProgressCharacter = ({ progress }) => {
         <circle cx="50" cy="50" r="45" fill="#FFD700"/>
         <circle cx="35" cy="40" r="5" fill="#000"/>
         <circle cx="65" cy="40" r="5" fill="#000"/>
-        <path d="M35 65 Q50 70 65 65" stroke="#000" strokeWidth="3" fill="none"/>
+        <path d="M35 65 Q50 65 65 65" stroke="#000" strokeWidth="3" fill="none"/>
       </svg>
     );
   } else if (progress < 60) {
@@ -156,7 +157,7 @@ const ProgressCharacter = ({ progress }) => {
         <circle cx="50" cy="50" r="45" fill="#FFD700"/>
         <circle cx="35" cy="40" r="5" fill="#000"/>
         <circle cx="65" cy="40" r="5" fill="#000"/>
-        <path d="M35 65 Q50 65 65 65" stroke="#000" strokeWidth="3" fill="none"/>
+        <path d="M35 65 Q50 70 65 65" stroke="#000" strokeWidth="3" fill="none"/>
       </svg>
     );
   } else if (progress < 80) {
@@ -225,6 +226,7 @@ const Accordion = ({ title, children }) => {
 const ThesisChecklistTool = () => {
   const [checkedItems, setCheckedItems] = useState({});
   const [progress, setProgress] = useState(0);
+  const [showPrintView, setShowPrintView] = useState(false);
 
   useEffect(() => {
     const totalItems = Object.values(checklistData).reduce(
@@ -239,37 +241,54 @@ const ThesisChecklistTool = () => {
     setCheckedItems(prev => ({ ...prev, [item]: !prev[item] }));
   };
 
+  const handlePrint = () => {
+    setShowPrintView(true);
+    setTimeout(() => {
+      window.print();
+      setShowPrintView(false);
+    }, 100);
+  };
+
+  if (showPrintView) {
+    return <PrintView checkedItems={checkedItems} progress={progress} checklistData={checklistData} />;
+  }
+
   return (
     <div className="thesis-checklist-tool noto-sans-jp">
       <h1>卒論・修論チェッカー 📝</h1>
-
-      {Object.entries(checklistData).map(([section, subsections], index) => (
-        <Accordion key={index} title={section}>
-          {Object.entries(subsections).map(([subsection, items], subIndex) => (
-            <div key={subIndex} className="subsection">
-              <h3>{subsection}</h3>
-              {items.map((item, itemIndex) => (
-                <ChecklistItem
-                  key={itemIndex}
-                  item={item}
-                  isChecked={checkedItems[item] || false}
-                  onToggle={() => handleToggle(item)}
-                />
+      
+      <div className="two-column-layout">
+        <div className="checklist-column">
+          {Object.entries(checklistData).map(([section, subsections], index) => (
+            <Accordion key={index} title={section}>
+              {Object.entries(subsections).map(([subsection, items], subIndex) => (
+                <div key={subIndex} className="subsection">
+                  <h3>{subsection}</h3>
+                  {items.map((item, itemIndex) => (
+                    <ChecklistItem
+                      key={itemIndex}
+                      item={item}
+                      isChecked={checkedItems[item] || false}
+                      onToggle={() => handleToggle(item)}
+                    />
+                  ))}
+                </div>
               ))}
-            </div>
+            </Accordion>
           ))}
-        </Accordion>
-      ))}
+        </div>
 
-      <div className="progress-section">
-        <h2>進捗状況</h2>
-        <ProgressBar progress={progress} />
-        <p className="progress-text">
-          完成度: {progress}% {progress < 30 ? '🏁' : progress < 70 ? '🚀' : '🎉'}
-        </p>
+        <div className="progress-column">
+          <div className="progress-box">
+            <div className="progress-section">
+              <h2>進捗状況</h2>
+              <ProgressBar progress={progress} />
+            </div>
+            <Certificate progress={progress} />
+            <button className="print-button" onClick={handlePrint}>進捗状況を印刷</button>
+          </div>
+        </div>
       </div>
-
-      <Certificate progress={progress} />
     </div>
   );
 };

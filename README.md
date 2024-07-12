@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# 卒論・修論チェッカー (Thesis Checklist Tool)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+卒論・修論チェッカーは、学生が論文作成プロセスを効果的に管理し、進捗状況を追跡するためのReactベースのウェブアプリケーションです。
 
-## Available Scripts
+## デモ
 
-In the project directory, you can run:
+[ライブデモ](https://yamnor.github.io/thesis-checklist-tool)
 
-### `npm start`
+## インストール
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+このプロジェクトをローカルで実行するには：
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. リポジトリをクローンします：
+   ```
+   git clone https://github.com/your-username/thesis-checklist-tool.git
+   ```
 
-### `npm test`
+2. プロジェクトディレクトリに移動します：
+   ```
+   cd thesis-checklist-tool
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. 依存関係をインストールします：
+   ```
+   npm install
+   ```
 
-### `npm run build`
+4. アプリケーションを起動します：
+   ```
+   npm start
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 使用方法
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. アプリケーションを開くと、論文作成プロセスの各段階に対応するチェックリストが表示されます。
+2. 各項目を完了したら、対応するチェックボックスをクリックします。
+3. 画面右側で進捗状況をリアルタイムで確認できます。
+4. 「進捗状況を印刷」ボタンをクリックすると、現在の進捗状況とチェックリストの詳細を印刷できます。
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 技術スタック
 
-### `npm run eject`
+- React
+- CSS3
+- HTML5
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## ライセンス
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[MIT](https://choosealicense.com/licenses/mit/)
