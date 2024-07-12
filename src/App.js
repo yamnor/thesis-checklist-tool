@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './ThesisChecklistTool.css';
+import './App.css';
 
 const checklistData = {
   "1. 内容について 📝": {

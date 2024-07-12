@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "卒論・修論チェッカー",
+  "name": "卒論・修論チェッカー",
   "icons": [
     {
       "src": "favicon.ico",
